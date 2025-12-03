@@ -1,0 +1,339 @@
+/* =========================
+   Variables
+========================= */
+:root {
+  /* Brand Colors */
+  --color-primary: #cf711f;
+  --color-primary-dark: #e67e22;
+  --color-primary-light: #f3b27a;
+
+  /* Text Colors */
+  --color-text-dark: #333;
+  --color-text-light: #555;
+  --color-text-muted: #6c757d;
+
+  /* Background Colors */
+  --color-bg-light-main: #fdf2e9;
+  --color-bg-dark: #222;
+  --color-bg-light: #fae5d3;
+
+  /* Button Colors */
+  --btn-primary-bg: var(--color-primary-dark);
+  --btn-primary-hover: var(--color-primary);
+  --btn-outline-bg: #fff;
+  --btn-outline-hover: var(--color-primary);
+
+  /* Card Shadow */
+  --card-shadow: rgba(0, 0, 0, 0.15);
+
+  /* Other */
+  --secondary-color: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+
+  /* Primary text color */
+  --text-primary-color: var(--color-primary);
+}
+
+/* =========================
+   Global Reset
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1.5; /* تحسين readability */
+  font-weight: 400;
+  color: var(--color-text-light);
+}
+
+.text-span {
+  color: var(--color-primary);
+}
+
+.custom-text {
+  color: var(--text-primary-color);
+}
+/* ===== Global Improvements ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 1rem;
+}
+
+/* ===== Buttons ===== */
+.nav-cta,
+.btn--full,
+.btn--outline,
+.cta-text-box .btn {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================
+   Navbar
+========================= */
+/* Logo */
+.logo {
+  height: 2.2rem;
+}
+
+/* Navbar Links */
+.nav-item .nav-link {
+  transition: all var(--transition-speed) ease-in-out;
+  color: var(--color-text-dark);
+}
+
+/* Hover & Active for regular links (not CTA) */
+.nav-item:not(:last-child) .nav-link:hover,
+.nav-item:not(:last-child) .nav-link:active {
+  color: var(--color-primary);
+}
+
+/* CTA Button */
+.nav-cta:link,
+.nav-cta:visited {
+  border-radius: 9px;
+  background-color: var(--btn-primary-bg);
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+.nav-cta:hover,
+.nav-cta:active {
+  background-color: var(--btn-primary-hover);
+  color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* Sticky Navbar */
+.sticky {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-bg-light-main) !important;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  z-index: 999;
+  transition: all var(--transition-speed) ease-in-out;
+  backdrop-filter: blur(10px);
+}
+
+/* Active Link */
+.nav-item:not(:last-child) .nav-link.active {
+  color: var(--color-primary) !important;
+  border-bottom: 2px solid var(--color-primary);
+  transition: all var(--transition-speed);
+}
+
+/* =========================
+   Hero Section
+========================= */
+.section-hero {
+  background-color: var(--color-bg-light-main);
+}
+
+.delivered-imgs img {
+  margin-right: -0.8rem;
+}
+
+.btn--full {
+  background-color: var(--color-primary-dark);
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+.btn--full:hover {
+  background-color: var(--color-primary);
+}
+
+.btn--outline {
+  background-color: var(--btn-outline-bg);
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 3px var(--color-primary);
+}
+
+/* =========================
+   Featured Section
+========================= */
+.img-dark {
+  filter: brightness(0);
+}
+
+/* =========================
+   How Section
+========================= */
+.circle-bg {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.circle-lg {
+  width: 60%;
+  padding-bottom: 60%;
+  background-color: var(--color-bg-light-main);
+  z-index: -2;
+}
+
+.circle-sm {
+  width: 45%;
+  padding-bottom: 45%;
+  background-color: var(--color-bg-light);
+  z-index: -1;
+}
+
+.section-how img {
+  z-index: 1;
+}
+
+/* =========================
+   Meals Section
+========================= */
+.meal-card {
+  transition: transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+.meal-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 8px 24px var(--card-shadow); /* صححت الـ box-shadow */
+  transition: transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+}
+
+.btn--recipes {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary-dark) !important;
+  transition: all var(--transition-speed) ease;
+}
+
+.btn--recipes:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* =========================
+   Testimonials Section
+========================= */
+.section-testimonials {
+  background-color: var(--color-bg-light-main);
+}
+
+.gallery-img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+/* =========================
+   Pricing Section
+========================= */
+.starter-plan {
+  border: 2px solid #fdf2e9 !important;
+}
+
+.complete-plan {
+  background-color: #fdf2e9 !important;
+}
+
+.complete-plan::after {
+  content: "Best value";
+  position: absolute;
+  top: 4%;
+  right: -32%;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  background-color: #ffd43b;
+  padding: 10px 8rem;
+  transform: rotate(45deg);
+}
+
+.pricing_icon {
+  background-color: var(--color-bg-light);
+}
+
+/* =========================
+   CTA Section
+========================= */
+.cta-text-box {
+  background-color: var(--color-primary-light);
+}
+
+.cta-text-box .form-control,
+.cta-text-box .form-select {
+  transition: all 0.3s ease;
+}
+
+.cta-text-box .form-control::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.cta-text-box .form-control:focus,
+.cta-text-box .form-select:focus {
+  box-shadow: 0 0 0 0.3rem rgba(0, 0, 0, 0.25);
+}
+
+.cta-text-box .form-check-input:checked {
+  background-color: #000 !important;
+  border-color: #000 !important;
+}
+
+.cta-text-box .btn {
+  background-color: #45260a !important;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.cta-text-box .btn:hover {
+  background-color: #fff !important;
+  color: #555;
+}
+
+#form-message {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.overlay {
+  background: linear-gradient(
+    to right bottom,
+    rgba(235, 151, 78, 0.35),
+    rgba(230, 125, 34, 0.35)
+  );
+}
+
+/* =========================
+   Footer Section
+========================= */
+.footer a {
+  transition: color var(--transition-speed) ease;
+}
+
+.footer a:hover {
+  color: var(--color-primary-dark) !important;
+}
